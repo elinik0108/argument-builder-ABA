@@ -1,0 +1,10 @@
+assumption a
+assumption b
+
+contrary(a) = x
+contrary(b) = y
+
+f :-
+p :- a
+q :- a, b
+x :- f

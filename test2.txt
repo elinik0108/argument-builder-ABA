@@ -1,0 +1,14 @@
+assumption legit_user
+assumption good_looking_post
+assumption no_spam_signals
+
+contrary(legit_user) = confirmed_bot
+contrary(good_looking_post) = harmful_intent
+contrary(no_spam_signals) = spam_detected
+
+allow :- legit_user, good_looking_post, no_spam_signals
+confirmed_bot :- failed_captcha, exceeds_rate_limit
+spam_detected :- known_spam
+
+failed_captcha :-
+exceeds_rate_limit :-
